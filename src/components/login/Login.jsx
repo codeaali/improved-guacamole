@@ -24,6 +24,9 @@ function Login(props) {
         
     return (
         <div>
+        <div className="welcome-msg">
+        <p > Peterboro Matboard Inc</p>
+        </div>
             <div className="wrapper">
                 <form onSubmit={handleSubmit}>
                     <h1>login</h1>

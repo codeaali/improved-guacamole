@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './fileupload.css'
 import { FiUpload } from "react-icons/fi";
 import { SiMicrosoftexcel } from "react-icons/si";
 import { FaCheckCircle } from "react-icons/fa";
+import {useHistory} from 'react-router-dom'
 
 function FileUpload(props) {
+    const history = useHistory();
 const {name} = props;
+useEffect(()=>{
+    if(!name){
+        alert('you need to log in first');
+        history.push('/')
+    }
+    //redirects to home if user did'nt logged in
+},[history,name]);
   return (
     <div>
-    <div className="welcome-msg">
+    {name && (<div>
+        <div className="welcome-msg">
     <p >welcome {name} ; upload the file here</p>
     </div>
     <br />
@@ -34,6 +44,8 @@ const {name} = props;
             </div>
             </div>
         </div>
+    </div>)}
+    
     </div>
   )
 }

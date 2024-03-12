@@ -1,7 +1,7 @@
 .trackboard-wrapper{
     background-color: aliceblue;
-    width: 1800px;
-    height: 95vh;
+    width: 1300px;
+    height: 100%;
 }
 .trackboard-wrapper header{
     margin: 5px auto;
@@ -13,7 +13,7 @@
 }
 .date-strip{
     display: flex;
-    margin: 30px 10px;
+    margin: 10px 10px;
     justify-content: space-around;
 
 }

@@ -40,6 +40,17 @@ input[type="file"]{
 label{
     display: block;
 }
+.upload-btn{
+    width: 100%;
+    margin: 20px 0px;
+    padding: 8px;
+    border: none;
+}
+.upload-btn:hover{
+    color: white;
+    background-color: rgb(4, 83, 24);
+    border: none;
+}
 .right-box{
     width: 50%;
     display: flex;

@@ -1,0 +1,54 @@
+.trackboard-wrapper{
+    background-color: aliceblue;
+    width: 1800px;
+    height: 95vh;
+}
+.trackboard-wrapper header{
+    margin: 5px auto;
+    padding: 10px 0;
+    text-align: center;
+}
+.trackboard-wrapper header .logo{
+    width: 200px;
+}
+.date-strip{
+    display: flex;
+    margin: 30px 10px;
+    justify-content: space-around;
+
+}
+.date-strip p{
+    color: black;
+    font-weight: 500;
+}
+.main-container{
+    margin: 10px;
+    color: aliceblue;
+}
+.main-container .section1,.section2,.section3{
+    display: flex;
+}
+.main-container .targets{
+    height: 200px;
+    width: 300px;
+    background-color: rgb(2, 49, 80);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.main-container .deliveries{
+    height: 200px;
+    width: 300px;
+    background-color: rgb(2, 75, 18);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+.main-container .rejections{
+    height: 200px;
+    width: 300px;
+    background-color: rgb(139, 4, 4);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+}

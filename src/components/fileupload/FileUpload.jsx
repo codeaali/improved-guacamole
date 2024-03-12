@@ -15,6 +15,10 @@ useEffect(()=>{
     }
     //redirects to home if user did'nt logged in
 },[history,name]);
+const handleUpload = () => {
+    alert('uploading success....');
+        history.push('/trackBoard')
+}
   return (
     <div>
     {name && (<div>
@@ -30,6 +34,7 @@ useEffect(()=>{
                 <p>or</p>
                 <input type="file" name="" id="file-input" />
                 <label htmlFor="file-input"></label>
+                <button className='upload-btn' onClick={handleUpload}>Upload</button>
             </div>
             <div className="right-box">
                 <div className="status-container">

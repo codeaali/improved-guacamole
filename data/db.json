@@ -1,0 +1,85 @@
+{
+    "data":{
+        "targets":[
+            {
+                "client":"McMichael Canadian Art Collection",
+                "quantity":"5004"
+
+            },
+            {
+                "client":"Serame Mouldings CC",
+                "quantity":"3673"
+
+            },
+            {
+                "client":"Cutting Edge Frames & Moulding Inc.",
+                "quantity":"8768"
+
+            },
+            {
+                "client":"Triple Touch Framing Inc.",
+                "quantity":"63738"
+
+            },
+            {
+                "client":"Triple Touch Framing Inc.",
+                "quantity":"9890"
+
+            }
+        ],
+        "deliveries":[
+            {
+                "client":"univeristy",
+                "quantity":"346"
+
+            },
+            {
+                "client":"omega",
+                "quantity":"3673"
+
+            },
+            {
+                "client":"unkk iploman",
+                "quantity":"8768"
+
+            },
+            {
+                "client":"nangos inc",
+                "quantity":"63738"
+
+            },
+            {
+                "client":"Triple Touch Framing Inc.",
+                "quantity":"3"
+
+            }
+        ],
+        "rejection":[
+            {
+                "client":"McMichael Canadian Art Collection",
+                "quantity":"2%"
+
+            },
+            {
+                "client":"Serame Mouldings CC",
+                "quantity":"1%"
+
+            },
+            {
+                "client":"Cutting Edge Frames & Moulding Inc.",
+                "quantity":"1%"
+
+            },
+            {
+                "client":"Triple Touch Framing Inc.",
+                "quantity":"nill"
+
+            },
+            {
+                "client":"Triple Touch Framing Inc.",
+                "quantity":"nill"
+
+            }
+        ]
+    }
+}

@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../assets/images/logo.jpg'
 import './trackboard.css'
 
 function TrackBoard() {
+    const [data,setData] = useState({});
+    
+    useEffect(()=>{
+        window.alert('data fetching......');
+    fetch('http://localhost:3000/data')
+    .then(res => res.json())
+    .then(json => setData(json))
+    },[])
+
+   
   return (
     <div>
         <div className="trackboard-wrapper">
@@ -15,36 +25,48 @@ function TrackBoard() {
             <div className="day"><p>Wednesday</p></div>
             <div className="day"><p>Thursday</p></div>
             <div className="day"><p>Friday</p></div>
-            <div className="day"><p>Satday</p></div>
-            <div className="day"><p>Sunday</p></div>
+            <div className="day"><p>weekly total</p></div>
+            
         </div>
         <div className="main-container">
             <div className="section1">
-                <div className="targets">Target</div>
-                <div className="targets">Target</div>
-                <div className="targets">Target</div>
-                <div className="targets">Target</div>
-                <div className="targets">Target</div>
-                <div className="targets">Target</div>
-                <div className="targets">Target</div>
+                
+                { data && data?.targets && data.targets.map((o)=>{
+                    return (<div className="targets">
+                        <p><b>Target</b></p>
+                        <br />
+                        <div className="client"> {o.client}</div>
+                        <br />
+                        <br />
+                        <div className="quantity"> {o.quantity}</div>
+                    </div>)
+                })}
             </div>
             <div className="section2">
-                <div className="deliveries">Deliveries</div>
-                <div className="deliveries">Deliveries</div>
-                <div className="deliveries">Deliveries</div>
-                <div className="deliveries">Deliveries</div>
-                <div className="deliveries">Deliveries</div>
-                <div className="deliveries">Deliveries</div>
-                <div className="deliveries">Deliveries</div>
+            { data && data?.deliveries && data.deliveries.map((o)=>{
+                    return (<div className="deliveries">
+                        <p><b>Deliveries</b></p>
+                        <br />
+                        <div className="client"> {o.client}</div>
+                        <br />
+                        <br />
+                        <div className="quantity"> {o.quantity}</div>
+                    </div>)
+                })}
+                
             </div>
             <div className="section3">
-                <div className="rejections">Rejections</div>
-                <div className="rejections">Rejections</div>
-                <div className="rejections">Rejections</div>
-                <div className="rejections">Rejections</div>
-                <div className="rejections">Rejections</div>
-                <div className="rejections">Rejections</div>
-                <div className="rejections">Rejections</div>
+                
+                { data && data?.rejection && data.rejection.map((o)=>{
+                    return (<div className="rejections">
+                        <p><b>Rejection</b></p>
+                        <br />
+                        <div className="client">{o.client}</div>
+                        <br />
+                        <br />
+                        <div className="quantity"> {o.quantity}</div>
+                    </div>)
+                })}
             </div>
         </div>
         </div>

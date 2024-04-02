@@ -25,7 +25,14 @@
                 "client":"Triple Touch Framing Inc.",
                 "quantity":"9890"
 
+            },
+            {
+                "client":"",
+                "quantity":""
+
             }
+
+            
         ],
         "deliveries":[
             {
@@ -52,32 +59,42 @@
                 "client":"Triple Touch Framing Inc.",
                 "quantity":"3"
 
+            },
+            {
+                "client":"",
+                "quantity":""
+
             }
         ],
         "rejection":[
             {
-                "client":"McMichael Canadian Art Collection",
-                "quantity":"2%"
+                "client":"",
+                "quantity":""
 
             },
             {
-                "client":"Serame Mouldings CC",
-                "quantity":"1%"
+                "client":"",
+                "quantity":""
 
             },
             {
-                "client":"Cutting Edge Frames & Moulding Inc.",
-                "quantity":"1%"
+                "client":"",
+                "quantity":""
 
             },
             {
-                "client":"Triple Touch Framing Inc.",
-                "quantity":"nill"
+                "client":"",
+                "quantity":""
 
             },
             {
-                "client":"Triple Touch Framing Inc.",
-                "quantity":"nill"
+                "client":"",
+                "quantity":""
+
+            },
+            {
+                "client":"",
+                "quantity":""
 
             }
         ]

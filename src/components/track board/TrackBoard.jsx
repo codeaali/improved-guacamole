@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../../assets/images/logo.jpg'
 import './trackboard.css'
+import { FaCartShopping } from "react-icons/fa6";
+
 
 function TrackBoard() {
     const [data,setData] = useState({});
@@ -25,47 +27,66 @@ function TrackBoard() {
             <div className="day"><p>Wednesday</p></div>
             <div className="day"><p>Thursday</p></div>
             <div className="day"><p>Friday</p></div>
-            <div className="day"><p>weekly total</p></div>
+            <div className="day"><p>weekly</p></div>
             
         </div>
         <div className="main-container">
             <div className="section1">
                 
-                { data && data?.targets && data.targets.map((o)=>{
-                    return (<div className="targets">
-                        <p><b>Target</b></p>
+                { data && data?.targets && data.targets.map((o,index)=>{
+                    return (index !== 5 ?
+                        <div className="targets">
+                        <p><b>Work Order</b></p>
                         <br />
+                        <div className="targets-container">
                         <div className="client"> {o.client}</div>
                         <br />
                         <br />
                         <div className="quantity"> {o.quantity}</div>
-                    </div>)
+                    </div>
+                    
+                        </div>
+                         : 
+                    <div className="targets"></div>
+                    )
                 })}
             </div>
             <div className="section2">
-            { data && data?.deliveries && data.deliveries.map((o)=>{
-                    return (<div className="deliveries">
-                        <p><b>Deliveries</b></p>
-                        <br />
-                        <div className="client"> {o.client}</div>
-                        <br />
-                        <br />
-                        <div className="quantity"> {o.quantity}</div>
-                    </div>)
+            { data && data?.deliveries && data.deliveries.map((o,index)=>{
+                    return (index !== 5 ? 
+                        <div className="deliveries">
+                            <p><b>Sale Order</b></p>
+                            <br />
+                            <div className="deliveries-container">
+                                <p><FaCartShopping /></p>
+                                <div className="client"> {o.client}</div>
+                                <br />
+                                <br />
+                                <div className="quantity"> {o.quantity}</div>
+                            </div>
+                        </div> : 
+                        <div className="deliveries"></div>
+                        )
                 })}
                 
             </div>
             <div className="section3">
                 
-                { data && data?.rejection && data.rejection.map((o)=>{
-                    return (<div className="rejections">
+                { data && data?.rejection && data.rejection.map((o,index)=>{
+                    return (index !== 5 ? 
+                    <div className="rejections">
                         <p><b>Rejection</b></p>
                         <br />
+                        <div className="rejections-container">
                         <div className="client">{o.client}</div>
                         <br />
                         <br />
                         <div className="quantity"> {o.quantity}</div>
-                    </div>)
+                    </div> 
+                        </div>
+                        : 
+                    <div className="rejections"></div>
+                    )
                 })}
             </div>
         </div>

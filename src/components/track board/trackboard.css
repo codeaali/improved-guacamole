@@ -1,7 +1,8 @@
 .trackboard-wrapper{
     background-color: aliceblue;
-    width: 1300px;
+    width: 1900px;
     height: 100%;
+    padding: 100px 10px;
 }
 .trackboard-wrapper header{
     margin: 5px auto;
@@ -25,12 +26,13 @@
     margin: 10px;
     color: aliceblue;
 }
-.main-container .section1,.section2,.section3{
+.section1,.section2,.section3{
     display: flex;
+    justify-content: space-around;
 }
 .main-container .targets{
-    height: 200px;
-    width: 300px;
+    height: auto;
+    width: 400px;
     background-color: rgb(2, 49, 80);
     margin: 10px 30px;
     border-radius: 10px;
@@ -38,20 +40,25 @@
     padding: 10px 0px;
 }
 .main-container .deliveries{
-    height: 200px;
-    width: 300px;
+    height: auto;
+    width: 400px;
     background-color: rgb(2, 75, 18);
     margin: 10px 30px;
     border-radius: 10px;
     text-align: center;
     padding: 10px 0px;
 }
+.deliveries-container, .rejections-container, .targets-container{
+    display: flex;
+    justify-content: space-around;
+}
 .main-container .rejections{
-    height: 200px;
-    width: 300px;
+    height: auto;
+    width: 400px;
     background-color: rgb(139, 4, 4);
     margin: 10px 30px;
     border-radius: 10px;
     text-align: center;
     padding: 10px 0px;
 }
+

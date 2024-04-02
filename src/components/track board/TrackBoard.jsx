@@ -39,12 +39,13 @@ function TrackBoard() {
                         <p><b>Work Order</b></p>
                         <br />
                         <div className="targets-container">
-                        <div className="client"> {o.client}</div>
+                        <div className="client"> {o.document_id}</div>
                         <br />
                         <br />
-                        <div className="quantity"> {o.quantity}</div>
+                        <div className="quantity"> {o.item_no}</div>
+                        <div>{o.qty}</div>
                     </div>
-                    
+
                         </div>
                          : 
                     <div className="targets"></div>

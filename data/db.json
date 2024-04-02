@@ -2,28 +2,33 @@
     "data":{
         "targets":[
             {
-                "client":"McMichael Canadian Art Collection",
-                "quantity":"5004"
+                "document_id":"2194",
+                "item_no":"A109",
+                "qty":"5"
 
             },
             {
-                "client":"Serame Mouldings CC",
-                "quantity":"3673"
+                "document_id":"2196",
+                "item_no":"A1304",
+                "qty":"5"
 
             },
             {
-                "client":"Cutting Edge Frames & Moulding Inc.",
-                "quantity":"8768"
+                "document_id":"2197",
+                "item_no":"A1304",
+                "qty":"10"
 
             },
             {
-                "client":"Triple Touch Framing Inc.",
-                "quantity":"63738"
+                "document_id":"2196",
+                "item_no":"A1350",
+                "qty":"56"
 
             },
             {
-                "client":"Triple Touch Framing Inc.",
-                "quantity":"9890"
+                "document_id":"2196",
+                "item_no":"A1350",
+                "qty":"56"
 
             },
             {

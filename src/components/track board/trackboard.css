@@ -12,6 +12,25 @@
 .trackboard-wrapper header .logo{
     width: 200px;
 }
+.day-wrapper{
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    
+}
+.day-wrapper .col{
+    margin: 2px;
+    background-color: rgba(194, 189, 189, 0.356);
+    padding: 2px;
+    text-align: center;
+    
+    
+}
+.day-wrapper .day-title{
+    font-weight: bold;
+    margin: 15px 0px;
+}
 .date-strip{
     display: flex;
     margin: 10px 10px;

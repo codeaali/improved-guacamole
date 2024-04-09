@@ -1,27 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import logo from '../../assets/images/logo.jpg'
 import './trackboard.css'
 import { FaCartShopping } from "react-icons/fa6";
+import TrackList from '../tracklist/TrackList';
+import { MyContext } from '../../index.js';
 
 
-function TrackBoard() {
-    const [data,setData] = useState({});
-    
-    useEffect(()=>{
-        window.alert('data fetching......');
-    fetch('http://localhost:3000/data')
-    .then(res => res.json())
-    .then(json => setData(json))
-    },[])
+function TrackBoard(props) {
+    const [data, setData] = useState({});
+    const { prodData, setProdData, salesData, setSalesData } = useContext(MyContext);
 
-   
-  return (
-    <div>
-        <div className="trackboard-wrapper">
-        <header>
-            <img src={logo} alt="" className='logo'/>
-        </header>
-        <div className="date-strip">
+    // useEffect(() => {
+    //     window.alert('data fetching......');
+    //     fetch('http://localhost:3000/data')
+    //         .then(res => res.json())
+    //         .then(json => setData(json))
+    // }, [])
+
+
+    return (
+        <div>
+            <div className="trackboard-wrapper">
+                <header>
+                    <img src={logo} alt="" className='logo' />
+                </header>
+                {/* <div className="date-strip">
             <div className="day"><p>Monday</p></div>
             <div className="day"><p>Tueday</p></div>
             <div className="day"><p>Wednesday</p></div>
@@ -29,8 +32,8 @@ function TrackBoard() {
             <div className="day"><p>Friday</p></div>
             <div className="day"><p>weekly</p></div>
             
-        </div>
-        <div className="main-container">
+        </div> */}
+                {/* <div className="main-container">
             <div className="section1">
                 
                 { data && data?.targets && data.targets.map((o,index)=>{
@@ -90,10 +93,51 @@ function TrackBoard() {
                     )
                 })}
             </div>
+        </div> */}
+                <div className="day-wrapper">
+                    <div className="col monday-col">
+                        <p className="day-title">Monday</p>
+                        <TrackList 
+                        prodData = {prodData}
+                        salesData = {salesData}
+                        />
+                    {console.log('trackboard',prodData)}
+                    </div>
+                    <div className="col tuesday-col">
+                        <p className="day-title">Tuesday</p>
+                        <TrackList 
+                        prodData = {prodData}
+                        salesData = {salesData}
+                        />
+                    </div>
+                    <div className="col wednesday-col">
+                        <p className="day-title">Wednesday</p>
+                        <TrackList 
+                        prodData = {prodData}
+                        salesData = {salesData}
+                        />
+                    </div>
+                    <div className="col thursday-col">
+                        <p className="day-title">Thursday</p>
+                        <TrackList 
+                        prodData = {prodData}
+                        salesData = {salesData}
+                        />
+                    </div>
+                    <div className="col friday-col">
+                        <p className="day-title">Friday</p>
+                        <TrackList 
+                        prodData = {prodData}
+                        salesData = {salesData}
+                        />
+                    </div>
+                    <div className="col weekday-col">
+                        <p className="day-title">Weekly</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
-  )
+    )
 }
 
 export default TrackBoard

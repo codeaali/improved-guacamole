@@ -1,0 +1,37 @@
+ .targets{
+    height: auto;
+    width: 200px;
+    background-color: rgb(37, 137, 204);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0px;
+}
+ .deliveries{
+    height: auto;
+    width: 200px;
+    background-color: rgb(2, 75, 18);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0px;
+}
+.deliveries-container, .rejections-container, .targets-container{
+    display: flex;
+    justify-content: space-around;
+}
+.rejections{
+    height: auto;
+    width: 200px;
+    background-color: rgb(139, 4, 4);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0px;
+}
+.container b{
+    text-align: center;
+}
+.container button {
+    text-align: center;
+}

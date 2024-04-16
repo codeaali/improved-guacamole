@@ -9,7 +9,10 @@ import { MyContext } from '../../index.js';
 function TrackBoard(props) {
     const [data, setData] = useState({});
     const { prodData, setProdData, salesData, setSalesData } = useContext(MyContext);
-
+    const prodLen = prodData.length || 0;
+    const salesLen = salesData.length || 0;
+    const prodMul = Math.ceil(prodLen/5);
+    const salesMul = Math.ceil(salesLen/5);
     // useEffect(() => {
     //     window.alert('data fetching......');
     //     fetch('http://localhost:3000/data')
@@ -100,6 +103,8 @@ function TrackBoard(props) {
                         <TrackList 
                         prodData = {prodData}
                         salesData = {salesData}
+                        min={0}
+                        max={prodMul}
                         />
                     {console.log('trackboard',prodData)}
                     </div>
@@ -108,6 +113,8 @@ function TrackBoard(props) {
                         <TrackList 
                         prodData = {prodData}
                         salesData = {salesData}
+                        min={prodMul}
+                        max={(prodMul*2)}
                         />
                     </div>
                     <div className="col wednesday-col">
@@ -115,6 +122,8 @@ function TrackBoard(props) {
                         <TrackList 
                         prodData = {prodData}
                         salesData = {salesData}
+                        min={prodMul*2}
+                        max={(prodMul*3)}
                         />
                     </div>
                     <div className="col thursday-col">
@@ -122,6 +131,8 @@ function TrackBoard(props) {
                         <TrackList 
                         prodData = {prodData}
                         salesData = {salesData}
+                        min={prodMul*3}
+                        max={(prodMul*4)}
                         />
                     </div>
                     <div className="col friday-col">
@@ -129,6 +140,8 @@ function TrackBoard(props) {
                         <TrackList 
                         prodData = {prodData}
                         salesData = {salesData}
+                        min={prodMul*4}
+                        max={(prodMul*5)}
                         />
                     </div>
                     <div className="col weekday-col">

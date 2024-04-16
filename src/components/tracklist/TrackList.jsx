@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import './tracklist.css'
+import { BsFillCartCheckFill, BsCartDash } from "react-icons/bs";
 
 function TrackList(props) {
-  const {prodData, salesData} = props;
-  const [limitter, setLimitter] = useState(true)
+  const {prodData, salesData, min, max} = props;
+  
     console.log('tracklist',prodData);
     console.log('tracklist', salesData);
   return (
@@ -11,33 +12,36 @@ function TrackList(props) {
         {prodData.length > 0 && <p><b>Work Order</b></p>}
         {/* work order */}
         { prodData.length > 0 && prodData.map((it,index)=>
-        ((limitter ? index <= 10 : index >=0 ) && <div className="targets">
+        ((index >= min && index < max) && <div className="targets">
         
         <br />
         <div className="targets-container">
-        <div className="client">{it['Document Internal ID']} </div>
+        <BsFillCartCheckFill />
+
+        <div className="client"><p>{it['Document Internal ID']} </p></div>
         <br />
         <br />
-        <div className="quantity">{it['Item No.']} </div>
+        <div className="quantity"><p>{it['Item No.']}</p> </div>
         <br />
-        <div className="quantity">{it['Quantity']} </div>
+        <div className="quantity"><p>{it['Quantity']}</p> </div>
         </div>
         </div>)
         
         )}
-        {prodData.length > 0 && <button onClick={()=>setLimitter(false)}>show more ...</button>}
         
         {/* sale order */}
-        <p><b>Sale Order</b></p>
-        {salesData && salesData.map((it)=>
-        (<div className="deliveries">
-        
+       {salesData.length > 0 &&  <p><b>Sale Order</b></p>}
+        {salesData && salesData.map((it,index)=>
+        ((index >= min && index < max) && <div className="deliveries">
+          
         <br />
         <div className="deliveries-container">
-        <div className="client"> {it['Document Number']}</div>
+        <div><BsCartDash /></div>
+        <br />
+        <div className="client"> <p>{it['Document Number']}</p></div>
         <br />
         <br />
-        <div className="quantity"> {it['Customer/Vendor Name']}</div>
+        <div className="quantity"><p>{it['Customer/Vendor Name']}</p></div>
         </div>
         </div>))}
 

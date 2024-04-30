@@ -10,9 +10,10 @@ import  {MyContext}  from '../../index.js';
 function FileUpload(props) {
      
     
-    const {prodData, setProdData, salesData, setSalesData} = useContext(MyContext);
+    const {prodData, setProdData, salesData, setSalesData, weeklydata, setWeeklyData} = useContext(MyContext);
     const [prodSheetName, setProdSheetName] = useState('');
     const [salesDueName, setSalesDueName] = useState('');
+    const [weeklyDataName, setWeeklyDataName] = useState('');
     const history = useHistory();
     const {name} = props;
 useEffect(()=>{
@@ -30,7 +31,7 @@ const handleChange = (e) => {
       const data = new Uint8Array(event.target.result);
       const workbook = XLSX.read(data, { type: 'array' });
       const sheetName = workbook.SheetNames[0]; // Assuming first sheet
-      console.log('*************',workbook);
+      console.log('*************',sheetName);
       if(sheetName === 'Production_Due.xlsx' || sheetName === 'Production_Due.xls'){
         setProdSheetName(sheetName);
         const excelData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
@@ -40,6 +41,11 @@ const handleChange = (e) => {
         const excelData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
         console.log(excelData);
         setSalesData(excelData);
+      }else if ((sheetName.includes('Production_Qty_Weekly')) || (sheetName.includes('Before monday'))){
+        setWeeklyDataName(sheetName);
+        const excelData = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
+        console.log(excelData);
+        setWeeklyData(excelData);
       }
       
       
@@ -50,9 +56,13 @@ const handleChange = (e) => {
 }
 const handleUpload = () => {
     console.log(prodSheetName)
-    if(prodSheetName && prodSheetName === 'Production_Due.xlsx' || prodSheetName === 'Production_Due.xls' || salesDueName === 'Sales_Due.xlsx' || salesDueName === 'Sales_Due.xls' || salesDueName === 'Sales_Due' ){
-        
-        if(prodData.length > 0 || salesData.length > 0){
+    if( (prodSheetName && prodSheetName === 'Production_Due.xlsx' || prodSheetName === 'Production_Due.xls') ||
+        (salesDueName && salesDueName === 'Sales_Due.xlsx' || salesDueName === 'Sales_Due.xls' || salesDueName === 'Sales_Due')  || 
+        (weeklyDataName && weeklyDataName.includes('Production_Qty_Weekly') || weeklyDataName.includes('Before monday') )){
+        if(weeklydata.length > 0){
+            console.log('weeklyData upload success', weeklydata);
+        }
+        if(prodData.length > 0 || salesData.length > 0 || weeklydata.length > 0){
             alert('uploading success....');
             history.push('/trackBoard');
         } 
@@ -79,6 +89,8 @@ const handleUpload = () => {
                     <input type="file" name="" id="file-input" onChange={handleChange} />
                     <label htmlFor="file-input"></label>
 
+                    <input type="file" name="" id="file-input" onChange={handleChange} />
+                    <label htmlFor="file-input"></label>
                     <input type="file" name="" id="file-input" onChange={handleChange} />
                     <label htmlFor="file-input"></label>
                     <button className='upload-btn' onClick={handleUpload}>Upload</button>

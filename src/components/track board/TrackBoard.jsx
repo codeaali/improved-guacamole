@@ -4,11 +4,12 @@ import './trackboard.css'
 import { FaCartShopping } from "react-icons/fa6";
 import TrackList from '../tracklist/TrackList';
 import { MyContext } from '../../index.js';
+import ItemLister from '../item lister/ItemLister.jsx';
 
 
 function TrackBoard(props) {
     const [data, setData] = useState({});
-    const { prodData, setProdData, salesData, setSalesData } = useContext(MyContext);
+    const { prodData, setProdData, salesData, setSalesData, weeklydata } = useContext(MyContext);
     const prodLen = prodData.length || 0;
     const salesLen = salesData.length || 0;
     const prodMul = Math.ceil(prodLen/5);
@@ -98,6 +99,13 @@ function TrackBoard(props) {
             </div>
         </div> */}
                 <div className="day-wrapper">
+                <div className="col weekday-col">
+                        <p className="day-title">Weekly</p>
+                        {/* ItemLister here */}
+                        <ItemLister
+                        weeklydata = {weeklydata}
+                        />
+                    </div>
                     <div className="col monday-col">
                         <p className="day-title">Monday</p>
                         <TrackList 
@@ -143,9 +151,6 @@ function TrackBoard(props) {
                         min={prodMul*4}
                         max={(prodMul*5)}
                         />
-                    </div>
-                    <div className="col weekday-col">
-                        <p className="day-title">Weekly</p>
                     </div>
                 </div>
             </div>

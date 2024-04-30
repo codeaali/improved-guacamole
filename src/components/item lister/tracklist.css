@@ -1,0 +1,50 @@
+ .targets{
+    height: 50px;
+    width: 250px;
+    background-color: rgb(37, 137, 204);
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    
+}
+ .deliveries{
+    height: 70px;
+    width: 250px;
+    background-color: rgb(52, 171, 78);
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+   
+}
+.deliveries .deliveries-container {
+    font-size: bold;
+}
+.deliveries-container, .rejections-container, .targets-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 10px;
+}
+.deliveries-container{
+    justify-content: space-between;
+}
+.rejections{
+    height: auto;
+    width: 200px;
+    background-color: rgb(139, 4, 4);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0px;
+}
+.container b{
+    text-align: center;
+}
+.container button {
+    text-align: center;
+}

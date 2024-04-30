@@ -1,0 +1,38 @@
+.items{
+    height: 50px;
+    width: 180px;
+    background-color: rgb(199, 110, 8);
+    margin: 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    
+    box-sizing: border-box;
+}
+.items-container{
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+  
+    
+}
+.deliveries-container{
+    justify-content: space-between;
+}
+.rejections{
+    height: auto;
+    width: 200px;
+    background-color: rgb(139, 4, 4);
+    margin: 10px 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 0px;
+}
+.container b{
+    text-align: center;
+}
+.container button {
+    text-align: center;
+}

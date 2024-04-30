@@ -46,7 +46,7 @@ function TrackList(props) {
         </div>))}
 
         {/* rejection */}
-        <p><b>Rejection</b></p>
+        
         {/* {data.map((it)=>
         (<div className="rejections">
         

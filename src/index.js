@@ -10,9 +10,12 @@ const MyContext = createContext();
 const MyProvider = ({ children }) => {
   const [prodData, setProdData] = useState([]);
   const [salesData, setSalesData] = useState([]);
+  const [weeklydata, setWeeklyData] = useState([]);
 
   return (
-    <MyContext.Provider value={{ prodData, setProdData, salesData, setSalesData }}>
+    <MyContext.Provider value=
+    {{ prodData, setProdData, salesData, setSalesData, weeklydata, setWeeklyData }}
+    >
       {children}
     </MyContext.Provider>
   );

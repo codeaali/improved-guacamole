@@ -14,10 +14,14 @@ function ItemLister(props) {
         <div className="items-container">
         {/* <BsFillCartCheckFill /> */}
 
-        <div className=""><p>{it['Weekly Completed %']} </p></div>
+        <div className=""><p>{it['Total Planned Weekly']} </p></div>
         <br />
         <br />
-        <div className=""><p>{it['Total Rejected Weekly']}</p> </div>
+        <div className=""><p>{it['Total Completed Weekly']}</p> </div>
+        <br />
+        <div className=""><p>{it['Weekly Completed %']}</p> </div>
+        <br />
+        <div className=""><p>{it['Total Rejected Weekly']} </p></div>
         <br />
         <div className=""><p>{it['Weekly Rejected %']}</p> </div>
         </div>
@@ -25,6 +29,7 @@ function ItemLister(props) {
         
         )}
     </div>
+
   )
 }
 

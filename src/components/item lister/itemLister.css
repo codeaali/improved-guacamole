@@ -1,7 +1,7 @@
 .items{
-    height: 50px;
+    height: 250px;
     width: 380px;
-    background-color: rgb(199, 110, 8);
+    background-color: rgb(173, 97, 10);
     margin: 5px;
     border-radius: 10px;
     display: flex;
@@ -12,11 +12,9 @@
     box-sizing: border-box;
 }
 .items-container{
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
     height: auto;
-  
-    
 }
 .deliveries-container{
     justify-content: space-between;

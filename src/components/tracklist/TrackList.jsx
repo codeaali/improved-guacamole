@@ -18,12 +18,12 @@ function TrackList(props) {
         <div className="targets-container">
         <BsFillCartCheckFill />
 
-        <div className="client"><p>{it['Document Internal ID']} </p></div>
+        <div className="client"><p>WO {it['Document Internal ID']} </p></div>
         <br />
         <br />
-        <div className="quantity"><p>{it['Item No.']}</p> </div>
+        <div className="quantity"><p> of Item {it['Item No.']}</p> </div>
         <br />
-        <div className="quantity"><p>{it['Quantity']}</p> </div>
+        <div className="quantity"><p> - Quantity: {it['Quantity']}</p> </div>
         </div>
         </div>)
         
@@ -38,10 +38,11 @@ function TrackList(props) {
         <div className="deliveries-container">
         <div><BsCartDash /></div>
         <br />
-        <div className="client"> <p>{it['Document Number']}</p></div>
+        <div className="client"> <p> SO {it['Document Number']} - </p></div>
         <br />
         <br />
-        <div className="quantity"><p>{it['Customer/Vendor Name']}</p></div>
+        {/* shows only first 30 characters Customer/Vendor Name*/}
+        <div className="quantity"><p>{it['Customer/Vendor Name'].substring(0,30)}</p></div>
         </div>
         </div>))}
 

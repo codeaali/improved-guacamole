@@ -1,6 +1,5 @@
 import React from 'react'
 import './itemLister.css'
-import './tracklist.css'
 
 function ItemLister(props) {
     const {weeklydata} = props;
